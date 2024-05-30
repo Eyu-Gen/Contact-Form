@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primaryColorLighter: hsl(148, 38%, 91%);
+    --primaryColorMedium: hsl(169, 82%, 27%);
+    --primaryColor: hsl(0, 66%, 54%);
+    --defaultColor: hsl(0, 0%, 100%);
+    --naturalMedium: hsl(186, 15%, 59%);
+    --naturalColorDarker: hsl(187, 24%, 22%);
+    --primaryFont: Karla;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    max-width: 1440px;
+    margin: 0 auto;
+    background-color: var(--primaryColorLighter);
+}
+
+main{
+    background-color: var(--defaultColor);
+    border: 1px solid red;
+    border-radius: 20px;
+    font-family: var(--primaryFont);
+    padding: 20px;
+    width: 50%;
+}
+
+.heading{
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--naturalColorDarker);
+    margin-bottom: 20px;
+}
+
+.subcontainer{
+    border: 1px solid red;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}

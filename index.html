@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eyu Gen</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpg" href="images/yugin.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main>
+        <p class="heading">Contact Us</p>
+        <form>
+            <div class="subcontainer" id="nameContainer">
+                <label for="firstName">
+                    <span>First Name <span class="highlight">*</span></span>
+                    <input type="text" id="firstName" name="firstName" required>
+                </label>
+                <label for="lastName">
+                    <span>Last Name <span class="highlight">*</span></span>
+                    <input type="text" id="lastName" name="lastName" required>
+                </label>
+            </div>
+
+            <div class="subcontainer" id="emailContainer">
+                <label for="email">
+                    <span>Email Address <span class="highlight">*</span></span>
+                    <input type="text" name="email" id="email" required>
+                </label>
+            </div>
+
+            <div class="subcontainer" id="queryContainer">
+                <label>Query Type <span class="highlight">*</span></label>
+                <div>
+                    <span>
+                        <input type="radio" id="queryType" name="queryType" required> 
+                        <label for="general">General Enquiry</label>
+                    </span>
+                    <span>
+                        <input type="radio" id="queryType" name="queryType" required> 
+                        <label for="support">Support Request</label>
+                    </span>
+                </div>
+            </div>
+
+            <div class="subcontainer" id="messageContainer">
+                <label for="message">
+                    Message <span class="highlight">*</span>
+                    <input type="text" name="message" id="message" required>
+                </label>
+            </div>
+
+            <div class="subcontainer" id="consentContainer">
+                <span>
+                    <input type="checkbox" id="consent" name="consent">
+                    <label for="consent">I consent to being contacted by the team <span class="highlight">*</span></label>
+                </span>
+            </div>
+
+            <input type="submit" value="Submit">
+        </form>
+    </main>
+
+    <script src="index.js" defer></script>
+</body>
+</html>
