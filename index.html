@@ -16,52 +16,71 @@
         <p class="heading">Contact Us</p>
         <form>
             <div class="subcontainer" id="nameContainer">
-                <label for="firstName">
-                    <span>First Name <span class="highlight">*</span></span>
-                    <input type="text" id="firstName" name="firstName" required>
+                <label for="firstName" class="content">
+                    <span class="label">First Name <span class="highlight">*</span></span>
+                    <input type="text" id="firstName" name="firstName" class="enterInput">
+                    <div class="errorBox">
+                        <p class="enter">This field is required</p>
+                    </div>
                 </label>
-                <label for="lastName">
-                    <span>Last Name <span class="highlight">*</span></span>
-                    <input type="text" id="lastName" name="lastName" required>
+                <label for="lastName" class="content">
+                    <span class="label">Last Name <span class="highlight">*</span></span>
+                    <input type="text" id="lastName" name="lastName" class="enterInput">
+                    <div class="errorBox">
+                        <p class="enter">This field is required</p>
+                    </div>
                 </label>
             </div>
 
             <div class="subcontainer" id="emailContainer">
-                <label for="email">
-                    <span>Email Address <span class="highlight">*</span></span>
-                    <input type="text" name="email" id="email" required>
+                <label for="email" class="content">
+                    <span class="label">Email Address <span class="highlight">*</span></span>
+                    <input type="text" name="email" id="email" class="enterInput">
+                    <div class="errorBox">
+                        <p class="enter">This field is required</p>
+                        <p id="reEnter">Please enter a valid email address</p>
+                    </div>
                 </label>
             </div>
 
             <div class="subcontainer" id="queryContainer">
-                <label>Query Type <span class="highlight">*</span></label>
-                <div>
-                    <span>
-                        <input type="radio" id="queryType" name="queryType" required> 
+                <label class="label">Query Type <span class="highlight">*</span></label>
+                <div class="content">
+                    <span class="queryTypeBox">
+                        <input type="radio" id="queryType" name="queryType" class="enterInput"> 
                         <label for="general">General Enquiry</label>
                     </span>
-                    <span>
-                        <input type="radio" id="queryType" name="queryType" required> 
+                    <span class="queryTypeBox">
+                        <input type="radio" id="queryType" name="queryType" class="enterInput"> 
                         <label for="support">Support Request</label>
                     </span>
+                </div>
+                <div class="errorBox">
+                    <p class="enter">Please select a query type</p>
                 </div>
             </div>
 
             <div class="subcontainer" id="messageContainer">
-                <label for="message">
-                    Message <span class="highlight">*</span>
-                    <input type="text" name="message" id="message" required>
+                <label for="message" class="content">
+                    <span class="label">Message <span class="highlight">*</span></span>
+                    <input type="text" name="message" id="message" class="enterInput">
+                    <div class="errorBox">
+                        <p class="enter">This field is required</p>
+                    </div>
                 </label>
             </div>
 
             <div class="subcontainer" id="consentContainer">
                 <span>
-                    <input type="checkbox" id="consent" name="consent">
+                    <input type="checkbox" id="consent" name="consent" class="enterInput">
                     <label for="consent">I consent to being contacted by the team <span class="highlight">*</span></label>
+                    <div class="errorBox">
+                        <p class="enter">To submit this form, please consent to being contacted</p>
+                    </div>
                 </span>
             </div>
 
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" id="submitBtn">
         </form>
     </main>
 

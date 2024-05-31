@@ -25,12 +25,18 @@ body{
     background-color: var(--primaryColorLighter);
 }
 
+.highlight{
+    color: var(--primaryColorMedium);
+}
+
 main{
     background-color: var(--defaultColor);
-    border: 1px solid red;
     border-radius: 20px;
+    color: var(--naturalColorDarker);
     font-family: var(--primaryFont);
-    padding: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 30px;
     width: 50%;
 }
 
@@ -42,8 +48,81 @@ main{
 }
 
 .subcontainer{
-    border: 1px solid red;
     margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
+    gap: 15px;
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+
+        .label{
+            margin-bottom: 10px;
+        }
+
+        input[type=text]{
+            height: 40px;
+            border-radius: 10px;
+            border: 1px solid var(--naturalColorDarker);
+            padding-left: 20px;
+
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+
+    .errorBox{
+        margin: 5px;
+        color: var(--primaryColor);
+
+        .enter,
+        #reEnter{
+            display: none;
+        }
+    }
+}
+
+#emailContainer>.content,
+#queryContainer>.content,
+#messageContainer>.content,
+#submitBtn{
+    width: 100%;
+}
+
+#queryContainer{
+    flex-direction: column;
+    gap: 0;
+
+    .content{
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 15px;
+
+        .queryTypeBox{
+            width: 50%;
+            height: 40px;
+            margin-top: 10px;
+            border-radius: 10px;
+            border: 1px solid var(--naturalColorDarker);
+            display: flex;
+            align-items: center;
+
+            input[type=radio]{
+                margin-left: 20px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+#submitBtn{
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--primaryColorMedium);
+    color: var(--defaultColor);
+    font-family: var(--primaryFont);
 }
