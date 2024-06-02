@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eyu Gen</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="images/jpg" href="images/yugin.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <p class="heading">Contact Us</p>
+
+        <div class="container" id="nameContainer">
+            <div class="subcontainer" id="firstNameSubcontainer">
+                <label for="firstName">First Name <span class="highlight">*</span></label>
+                <input type="text" id="firstName" name="firstName" required>
+                <div class="errorBox">
+                    <p class="enter">This field is required</p>
+                </div>
+            </div>
+            <div class="subcontainer" id="lastNameSubcontainer">
+                <label for="lastName">Last Name <span class="highlight">*</span></label>
+                <input type="text" id="lastName" name="lastName" required>
+                <div class="errorBox">
+                    <p class="enter">This field is required</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="emailContainer">
+            <div class="subcontainer" id="emailSubcontainer">
+                <label for="email">Email Address <span class="highlight">*</span></label>
+                <input type="text" id="email" name="email" required>
+                <div class="errorBox">
+                    <p class="enter">This field is required</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="queryContainer">
+            <div class="subcontainer" id="querySubcontainer">
+                <label>Query Type <span class="highlight">*</span></label>
+                <div class="radio-group">
+                    <div class="radioBox">
+                        <input type="radio" id="general-enquiry" name="query_type" value="general_enquiry" required>
+                        <label for="general-enquiry">General Enquiry</label>
+                    </div>
+                    <div class="radioBox">
+                        <input type="radio" id="support-request" name="query_type" value="support_request" required>
+                        <label for="support-request">Support Request</label>
+                    </div>
+                </div>
+                <div class="errorBox">
+                    <p class="enter">Please select a query type</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="messageContainer">
+            <div class="subcontainer" id="messageSucontainer">
+                <label for="message">Message <span class="highlight">*</span></label>
+                <textarea name="message" id="message" rows="5" required></textarea>
+                <div class="errorBox">
+                    <p class="enter">This field is required</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="consentContainer">
+            <div class="subcontainer" id="consentSubcontainer">
+                <div class="checkboxGroup">
+                    <input type="checkbox" name="consent" id="consent" required>
+                    <label for="consent">I consent to being consented by the team <span class="highlight">*</span></label>
+                </div>
+                <div class="errorBox">
+                    <p class="enter">To submit thie form, please consent to being contacted</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="submitContainer">
+            <div class="subcontainer" id="submitSubcontainer">
+                <input type="submit" value="Submit" id="submitBtn">
+            </div>
+        </div>
+    </main>
+</body>
+</html>
