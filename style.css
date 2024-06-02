@@ -62,10 +62,6 @@ main{
             height: 40px;
             border: 1px solid var(--naturalMediumColor);
             border-radius: 5px;
-
-            &:focus{
-                outline-color: var(--primaryMediumColor);
-            }
         }
         
         .errorBox{
@@ -160,6 +156,10 @@ textarea{
     font-size: 15px;
     font-family: var(--primaryFont);
     font-weight: 600;
+    
+    &:focus{
+        outline-color: var(--primaryMediumColor);
+    }
 }
 
 input[type=text],
