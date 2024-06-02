@@ -62,6 +62,10 @@ main{
             height: 40px;
             border: 1px solid var(--naturalMediumColor);
             border-radius: 5px;
+
+            &:focus{
+                outline-color: var(--primaryMediumColor);
+            }
         }
         
         .errorBox{
@@ -120,12 +124,14 @@ main{
         border: 1px solid var(--naturalMediumColor);
         border-radius: 5px;
         resize: vertical;
+        padding: 20px;
     }
 }
 
 #consentContainer>.subcontainer>.checkboxGroup{
     display: flex;
     align-items: center;
+    width: fit-content;
 
     label{
         margin: 0;
@@ -145,6 +151,32 @@ main{
     font-weight: 600;
     font-family: var(--primaryFont);
     margin-top: 10px;
+}
+
+input[type=text],
+textarea{
+    color: var(--naturalDarkerColor);
+    padding-left: 20px;
+    font-size: 15px;
+    font-family: var(--primaryFont);
+    font-weight: 600;
+}
+
+input[type=text],
+textarea,
+.radioBox,
+.checkboxGroup,
+.checkboxGroup>label,
+.checkboxGroup>input,
+#submitBtn{
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+input[type=radio],
+input[type=checkbox]{
+    accent-color: var(--primaryMediumColor);
 }
 
 @media (max-width: 600px) {
