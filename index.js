@@ -99,6 +99,6 @@ document.getElementById("submitBtn").addEventListener("click", function() {
     }
 
     if (allValid) {
-        alert('Form submitted successfully!');
+        (document.getElementById("sucessContainer")).style.display = "block";
     }
 });

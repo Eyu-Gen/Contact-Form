@@ -17,11 +17,43 @@
 body{
     background-color: var(--primaryLighterColor);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     max-width: 1440px;
     min-height: 100vh;
     margin: 0 auto;
+    position: relative;
+}
+
+.imageSection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#sucessContainer{
+    background-color: var(--naturalDarkerColor);
+    padding: 20px;
+    border-radius: 10px;
+    color: var(--primaryLighterColor);
+    font-family: var(--primaryFont);
+    margin-top: 20px;
+    position: absolute;
+    top: 20px;
+    display: none;
+
+    .upper{
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: 600;
+
+        .sucessHeading{
+            margin-left: 10px;
+        }
+    }
 }
 
 main{
@@ -148,6 +180,11 @@ main{
     font-weight: 600;
     font-family: var(--primaryFont);
     margin-top: 10px;
+    transition: background-color 0.2s linear;
+
+    &:hover{
+        background-color: var(--naturalDarkerColor);
+    }
 }
 
 input[type=text],
