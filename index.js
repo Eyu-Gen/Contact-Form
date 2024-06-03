@@ -1,4 +1,3 @@
-// Radio Box Color Changing
 document.getElementById('radioBox1').addEventListener('change', function(event) {
     if (event.target.name === 'query_type') {
         document.getElementById('radioBox1').style.backgroundColor = "var(--primaryLighterColor)";
@@ -17,55 +16,89 @@ document.getElementById('radioBox2').addEventListener('change', function(event) 
     }
 });
 
-// Displaying Error if input is empty
-let inputText = document.querySelectorAll("input[type=text]");
-let error = document.querySelectorAll(".enter");
-let inputTextValue = [];
-
 document.getElementById("submitBtn").addEventListener("click", function() {
-    // Displaying Error if input type = text is empty
-    for(let i = 0; i < inputText.length; i++){
+    let inputText = document.querySelectorAll("input[type=text]");
+    let error = document.querySelectorAll(".enter");
+    let inputTextValue = [];
+    let allValid = true;
+
+    for (let i = 0; i < inputText.length; i++) {
         inputTextValue[i] = inputText[i].value;
 
-        if(inputTextValue[i].length == 0){
+        if (inputTextValue[i].length == 0) {
             error[i].style.display = "block";
+            allValid = false;
+        } else {
+            error[i].style.display = "none";
         }
-    };
-    
-    // Displaing Error is Message Box is empty
-    if((document.getElementById("message").value).length == 0) {
+
+        // Check if it's the specific text input to validate email ending
+        if (i == 2) {
+            if (!inputTextValue[i].endsWith('@gmail.com')) {
+                error[i].style.display = "block";
+                allValid = false;
+            } else {
+                error[i].style.display = "none";
+            }
+        }
+
+        // Hiding the error again
+        inputText[i].addEventListener("input", function() {
+            error[i].style.display = "none";
+        });
+    }
+
+    // Displaying error if message box is empty
+    if ((document.getElementById("message").value).length == 0) {
         document.getElementById("messageError").style.display = "block";
+        allValid = false;
     } else {
         document.getElementById("messageError").style.display = "none";
     }
 
-    // Displaying Error if input type = radio / checkbox is off
-    let radioboxClicked1 = 0;
-    let radioboxClicked2 = 0;
-    let checkboxClicked = 0;
-
-    document.getElementById("general-enquiry").addEventListener("click", function() {
-        radioboxClicked1 = 1;
+    // Hiding the error again
+    document.getElementById("message").addEventListener("input", function() {
+        document.getElementById("messageError").style.display = "none";
     });
 
-    document.getElementById("support-request").addEventListener("click", function() {
-        radioboxClicked2 = 1;
-    });
-    
-    document.getElementById("checkboxGroup").addEventListener("click", function() {
-        radioboxClicked2 = 1;
-    });
+    // Displaying error if input type = radio / checkbox is off
+    let radios = document.getElementsByName('query_type');
+    let checkbox = document.getElementById('consent');
+    let radioSelected = false;
 
- 
-    if (radioboxClicked1 === 0 || radioboxClicked2 === 0) {
-        document.getElementById("radioError").style.display = "block";
-    } else {
-        document.getElementById("radioError").style.display = "none";
+    for (let radio of radios) {
+        if (radio.checked) {
+            radioSelected = true;
+            break;
+        }
     }
 
-    if(checkboxClicked === 0) {
-        document.getElementById("checkboxError").style.display = "block";
+    if (!radioSelected) {
+        document.getElementById('radioError').style.display = 'block';
+        allValid = false;
     } else {
-        document.getElementById("checkboxError").style.display = "none";
+        document.getElementById('radioError').style.display = 'none';
+    }
+
+    if (!checkbox.checked) {
+        document.getElementById('checkboxError').style.display = 'block';
+        allValid = false;
+    } else {
+        document.getElementById('checkboxError').style.display = 'none';
+    }
+
+    // Hiding radio / checkbox errors again
+    document.getElementById('radioBox1').addEventListener("click", hideError);
+    document.getElementById('radioBox2').addEventListener("click", hideError);
+    document.getElementById('checkboxGroup').addEventListener("click", function() {
+        document.getElementById('checkboxError').style.display = 'none';
+    });
+
+    function hideError() {
+        document.getElementById('radioError').style.display = 'none';
+    }
+
+    if (allValid) {
+        alert('Form submitted successfully!');
     }
 });

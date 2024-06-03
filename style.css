@@ -69,7 +69,8 @@ main{
             margin-top: 5px;
             margin-bottom: 10px;
             
-            .enter{
+            .enter,
+            #reEnter{
                 font-size: 15px;
                 font-weight: 600;
                 color: var(--primaryColor);
