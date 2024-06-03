@@ -55,7 +55,7 @@
                     </div>
                 </div>
                 <div class="errorBox">
-                    <p class="enter">Please select a query type</p>
+                    <p class="enter" id="radioError">Please select a query type</p>
                 </div>
             </div>
         </div>
@@ -65,26 +65,26 @@
                 <label for="message">Message <span class="highlight">*</span></label>
                 <textarea name="message" id="message" rows="5" required></textarea>
                 <div class="errorBox">
-                    <p class="enter">This field is required</p>
+                    <p class="enter" id="messageError">This field is required</p>
                 </div>
             </div>
         </div>
 
         <div class="container" id="consentContainer">
             <div class="subcontainer" id="consentSubcontainer">
-                <div class="checkboxGroup">
+                <div class="checkboxGroup" id="checkboxGroup">
                     <input type="checkbox" name="consent" id="consent" required>
                     <label for="consent">I consent to being consented by the team <span class="highlight">*</span></label>
                 </div>
                 <div class="errorBox">
-                    <p class="enter">To submit thie form, please consent to being contacted</p>
+                    <p class="enter" id="checkboxError">To submit thie form, please consent to being contacted</p>
                 </div>
             </div>
         </div>
 
         <div class="container" id="submitContainer">
             <div class="subcontainer" id="submitSubcontainer">
-                <input type="submit" value="Submit" id="submitBtn">
+                <input type="submit"  id="submitBtn">
             </div>
         </div>
     </main>
